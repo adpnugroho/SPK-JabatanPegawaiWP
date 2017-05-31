@@ -67,9 +67,10 @@
                                     </thead>
                                     <tbody id="tabelBobot">
                                         <?php
+                                        $no = 1;
                                         foreach ($alternatif as $row) {
                                             echo "<tr>"
-                                            . "<td><input type='hidden' name='id_pegawai[]' value='" . $row->id_pegawai . "'>" . $row->id_pegawai . "</td>"
+                                            . "<td><input type='hidden' name='id_pegawai[]' value='" . $row->id_pegawai . "'>" . $no . "</td>"
                                             . "<td><input type='hidden' name='nama_pegawai[]' value='" . $row->nama_pegawai . "'>" . $row->nama_pegawai . "</td>"
                                             . "<td><select class='span2' name='ujian[]'><option value='1'>Sangat Baik</option><option value='0.75'>Baik</option><option value='0.5'>Cukup Baik</option><option value='0.25'>Buruk</option></select></td>"
                                             . "<td><select class='span2' name='prestasi[]'><option value='1'>Sangat Baik</option><option value='0.75'>Baik</option><option value='0.5'>Cukup Baik</option><option value='0.25'>Buruk</option></select></td>"
@@ -77,6 +78,7 @@
                                             . "<td><select class='span2' name='kedisiplinan[]'><option value='1'>Sangat Baik</option><option value='0.75'>Baik</option><option value='0.5'>Cukup Baik</option><option value='0.25'>Buruk</option></select></td>"
                                             . "<td><select class='span2' name='pendidikan[]'><option value='1'>>S1</option><option value='0.75'>S1</option><option value='0.5'>D1-D3</option><option value='0.25'>SMA/SMK</option></select></td>"
                                             . "</tr>";
+                                            $no++;
                                         }
                                         ?>
                                         <tr><td colspan="7"><a class="btn btn-primary" id="prosesWP"><i class="icon-ok"></i>  PROSES</a></td></tr>
@@ -139,7 +141,7 @@
                                 var no = 1;
                                 $.each(response, function (i, item) {
                                     $('#tableRanking').append('<tr>\n\
-                                                                <td>' + item.id_pegawai + '</td>\n\
+                                                                <td>' + no + '</td>\n\
                                                                 <td>' + item.nama_pegawai + '</td>\n\
                                                                 <td>' + item.vektor_s + '</td>\n\
                                                                 <td>' + item.vektor_v + '</td>\n\

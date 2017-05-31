@@ -71,7 +71,7 @@ class Model_alternatif extends CI_Model {
         foreach($bobot as $row){
             $bobot_kriteria[$row->id_kriteria]=$row->hasil_bobot;
         }
-        for($x=0;$x<count($data)-1;$x++){
+        for($x=0;$x<count($data['id_pegawai']);$x++){
             $data_wp[$x]['id_pegawai']=$data['id_pegawai'][$x];
             $data_wp[$x]['nama_pegawai']=$data['nama_pegawai'][$x];
             $data_wp[$x]['vektor_s']= pow($data['ujian'][$x],$bobot_kriteria[1])+pow($data['prestasi'][$x],$bobot_kriteria[2])+pow($data['lama'][$x],$bobot_kriteria[3])+pow($data['kedisiplinan'][$x],$bobot_kriteria[4])+pow($data['pendidikan'][$x],$bobot_kriteria[5]);

@@ -241,13 +241,15 @@
                     success: function (response) {
                         if (response.length > 0) {
                             $('#tabelAlternatif').empty();
+                            var no = 1;
                             $.each(response, function (i, item) {
                                 $('#tabelAlternatif').append("<tr>\n\
-                                                                <td>" + item.id_pegawai + "</td>\n\
+                                                                <td>" + no + "</td>\n\
                                                                 <td>" + item.nama_pegawai + "</td>\n\
                                                                 <td><a data-id='" + item.id_pegawai + "' data-nama='" + item.nama_pegawai + "' class='pegawaiEdit btn btn-block btn-primary'><i class='btn-icon-only icon-ok'></i> Edit</a></td>\n\
                                                                 <td><a data-id='" + item.id_pegawai + "' class='pegawaiHapus btn btn-block btn-danger'><i class='btn-icon-only icon-trash'></i> Hapus</a></td>\n\
                                                             </tr>");
+                                                                    no = no+1;
                             });
                         } else {
                             console.log('test 2');
